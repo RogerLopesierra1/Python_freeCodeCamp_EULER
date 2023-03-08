@@ -1,22 +1,22 @@
 def factor_primo_mas_grande( n: int )->int:
-    totales = [2]
+    primos = [2]
 
     if n != 2:
       i = 3
       while i <= n:
-        totales.append(i)
+        primos.append(i)
         i += 2
 
-      for num in totales:
-        i = totales.index(num)+1
-        while i < len(totales):
-           if totales[i]%num == 0:
-              totales.remove(totales[i])
+      for num in primos:
+        i = primos.index(num)+1
+        while i < len(primos):
+           if primos[i]%num == 0:
+              primos.remove(primos[i])
            else:
               i += 1
 
     divisores = []
-    for num in totales:
+    for num in primos:
       while n%num == 0:
           n /= num
           if divisores.count(num) == 0:
